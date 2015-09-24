@@ -14,9 +14,9 @@ A URL install-and-go shorten-er with database server. Using JSON as store suitab
  - RewriteRule ^([0-9+a-z+A-z+\.\!\*\(\)]+)\/?(.*)$  index.php?go={R:1}&get={UrlEncode:{C:0}}&path={UrlEncode:{R:2}}
 
 ##Access API via:
-http(s)://short.example.com/?url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
+http(s)://short.example.com/?action=add&url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
 
-with JSON respone: $JSONObject->shortenURL
+###JSON respone: $JSONObject->shortenURL
 
 ###Follow parameters can be omited:
  - `{customable_password}`
