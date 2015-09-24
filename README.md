@@ -13,13 +13,17 @@ A URL install-and-go shorten-er with database server. Using JSON as store suitab
  - RewriteCond {QUERY_STRING}=^(.*)$ 
  - RewriteRule ^([0-9+a-z+A-z+\.\!\*\(\)]+)\/?(.*)$  index.php?go={R:1}&get={UrlEncode:{C:0}}&path={UrlEncode:{R:2}}
 
-##Access API via:
-http(s)://short.example.com/?action=add&url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
+##What you get?
+###A web UI interface to shorten URL
+Just go to http(s)://your_server/
 
-###JSON respone:
-$JSONObject->shortenURL
+###Access API via:
+http(s)://your_server/?action=add&url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
 
-###Follow parameters can be omited:
+result JSON respone:  $JSONObject->shortenURL
+
+
+####Follow parameters can be omited:
  - `{customable_password}`
  - `{customable_short_Name}`
  - `{customable_redirect_rule}` //default value will become 'default'
@@ -30,3 +34,6 @@ The plugin is here: https://github.com/wilsonlmh/shorten
 The configuration is:
   - customURL = //The API URL above//
   - customJSON = '->shortenURL'
+
+##Security Concern:
+If you use rewrite rules above, any file except index.php won't be accessed by users. So you don't need to concern the json file(you can also change the path in $config) expose to users. If you need something special, I recommend you apply a segment filter(or something similar) in your server config(e.g. .htaccess).
