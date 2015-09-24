@@ -16,7 +16,8 @@ A URL install-and-go shorten-er with database server. Using JSON as store suitab
 ##Access API via:
 http(s)://short.example.com/?action=add&url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
 
-###JSON respone: $JSONObject->shortenURL
+###JSON respone:
+$JSONObject->shortenURL
 
 ###Follow parameters can be omited:
  - `{customable_password}`
