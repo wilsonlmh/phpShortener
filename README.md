@@ -16,7 +16,16 @@ A URL install-and-go shorten-er with database server. Using JSON as store suitab
 ##Access API via:
 http(s)://short.example.com/?url=`{urlencoded_original_url}`&key=`{customable_password}`&name=`{customable_short_Name}`&type=`{customable_redirect_rule}`
 
+with JSON respone: $JSONObject->shortenURL
+
 ###Follow parameters can be omited:
  - `{customable_password}`
  - `{customable_short_Name}`
  - `{customable_redirect_rule}` //default value will become 'default'
+
+##Integrate with `shorten` ownCloud plugin
+You can use the 'shorten' ownCloud plugin to shorten the share url. 
+The plugin is here: https://github.com/wilsonlmh/shorten
+The configuration is:
+  - customURL = //The API URL above//
+  - customJSON = '->shortenURL'
