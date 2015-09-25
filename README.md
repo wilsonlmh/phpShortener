@@ -1,5 +1,5 @@
 # phpShortener
-A URL install-and-go shorten-er with database server. Using JSON as store suitable for small instance with fast installation.
+A URL install-and-go shorten-er without database server. Using JSON as store suitable for small instance with fast installation.
 
 ##Requirement/Installation:
   - Any webserver with PHP 5+
