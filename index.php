@@ -254,7 +254,7 @@ function get($go) {
         initDB();
         if (isset($db[$go])) {
             $preResult = $db[$go]['url'];
-            $type = $cache[$go]['type'];
+            $type = $db[$go]['type'];
         }
     }
     if (filter_var($preResult, FILTER_VALIDATE_URL) != false) {
